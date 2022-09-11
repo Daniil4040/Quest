@@ -1,25 +1,27 @@
-# README
+# Основной принцип работы сервера 
+-смотрим в routes.rb, для добавления в адресную строку questions
+-добавляем controller
+-добавляем views
+# создание миграции для модели(таблицы)
+## rails g model Film
+### добавляем поля для таблицы, где t.string - тип поля, name - название поля.
+class CreateFilms < ActiveRecord::Migration[6.1]
+  def change
+    create_table :films do |t|
+      t.string :name
+      t.text   :description
+      t.timestamps
+    end
+  end
+end
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Команда для приминения миграции 
+-rails db:migrate
 
-Things you may want to cover:
+## Добавляем в файл routes.rb, get "/films" - для адресной строки, а to: "films#index" - контроллер и action
+-  get "/films", to:"films#index"
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# Quest
+## В controllers создаю films_controller.rb, добавляем action#index
+## В views создаю в папочке films, index.html.erb 
+## В консоли создаём записи с фильмами
+- Film.create!(name: "Matrix", description: "fantastic")
