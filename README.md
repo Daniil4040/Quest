@@ -1,3 +1,8 @@
+# git
+- git add . 
+- git commit -m "запись"
+- git push 
+
 # Основной принцип работы сервера 
 -смотрим в routes.rb, для добавления в адресную строку questions
 -добавляем controller
