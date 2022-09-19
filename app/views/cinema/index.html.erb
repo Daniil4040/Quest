@@ -1,0 +1,6 @@
+<h1>Cinema</h1>
+
+<% @cinema.each do |cinema| %>
+    <h2><%= cinema.title %></h2>
+    <%= cinema.formatted_created_at %>
+<% end %>

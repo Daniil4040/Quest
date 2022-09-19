@@ -30,3 +30,7 @@ end
 ## В views создаю в папочке films, index.html.erb 
 ## В консоли создаём записи с фильмами
 - Film.create!(name: "Matrix", description: "fantastic")
+
+## Добавили новый метод new 
+## Добавили Валидацию, presence проверка на присутствие, lenght - минимальная длина символов поля
+- validates :title, presence: true, length: {minimum: 2}

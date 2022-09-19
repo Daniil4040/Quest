@@ -1,0 +1,6 @@
+<h1>Films</h1>
+
+<% @films.each do |film| %>
+    <h2><%= film.title %></h2>
+    <%= film.formatted_created_at %>
+<% end %>
