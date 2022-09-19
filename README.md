@@ -3,14 +3,14 @@
 - git commit -m "запись"
 - git push 
 
-# Основной принцип работы сервера 
+## Основной принцип работы сервера 
 - смотрим в routes.rb, для добавления в адресную строку questions
 - добавляем controller
 - добавляем views
-# Cоздание миграции для модели(таблицы)
+## Cоздание миграции для модели(таблицы)
 - rails g model Film
 
-# Добавляем поля для таблицы, где t.string - тип поля, name - название поля.
+## Добавляем поля для таблицы, где t.string - тип поля, name - название поля.
 class CreateFilms < ActiveRecord::Migration[6.1]
   def change
     create_table :films do |t|
@@ -31,9 +31,12 @@ end
 - В controllers создаю films_controller.rb, добавляем action#index
 - В views создаю в папочке films, index.html.erb 
 - В консоли создаём записи с фильмами
-## Film.create!(name: "Matrix", description: "fantastic")
 
-# Добавили новый метод new
+### Film.create!(name: "Matrix", description: "fantastic")
 
-# Добавили Валидацию, presence проверка на присутствие, lenght - минимальная длина символов поля
-- validates :title, presence: true, length: {minimum: 2}
+## Добавили новый метод new
+
+## Добавили Валидацию
+- presence проверка на присутствие; 
+- lenght - минимальная длина символов поля;
+- validates :title, presence: true, length: {minimum: 2};
