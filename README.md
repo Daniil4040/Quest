@@ -1,15 +1,16 @@
-# git
+# Git
 - git add . 
 - git commit -m "запись"
 - git push 
 
 # Основной принцип работы сервера 
--смотрим в routes.rb, для добавления в адресную строку questions
--добавляем controller
--добавляем views
+- смотрим в routes.rb, для добавления в адресную строку questions
+- добавляем controller
+- добавляем views
 # создание миграции для модели(таблицы)
-## rails g model Film
-### добавляем поля для таблицы, где t.string - тип поля, name - название поля.
+## - rails g model Film
+
+# добавляем поля для таблицы, где t.string - тип поля, name - название поля.
 class CreateFilms < ActiveRecord::Migration[6.1]
   def change
     create_table :films do |t|

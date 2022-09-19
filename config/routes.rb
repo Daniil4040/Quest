@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   get "/questions/new", to:"questions#new"
   get "/films", to:"films#index"
   get "/films/new", to:"#films#new"
-  get "/cinima", to:"cinima#index"
-  get "/cinema/new", to:"cinima#new"
+  get "/cinema", to:"cinema#index"
+  get "/cinema/new", to:"cinema#new"
 end
