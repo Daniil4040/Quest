@@ -1,0 +1,5 @@
+<h2><%= @film.name %></h2>
+<%= @film.formatted_created_at %>
+<h3><%= @film.description %></h3>
+<%= link_to "edit", edit_film_path(@film) %>
+<%= link_to "all", films_path %>

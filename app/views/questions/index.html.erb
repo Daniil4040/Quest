@@ -3,4 +3,8 @@
 <% @questions.each do |question| %>
     <h2><%= question.title %></h2>
     <%= question.formatted_created_at %>
+    <h3><%= question.body %></h3>
+    <%= link_to "edit", edit_question_path(question) %>
+    <%= link_to "show", question_path(question) %>
+    <%= link_to "destroy", question_path(question), data: {method: :delete, confirm: "Вы точно хотите удалить?"} %>
 <% end %>

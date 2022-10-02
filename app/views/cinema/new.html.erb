@@ -1,12 +1,2 @@
-<h1>new_cinema</h1>
-<%= form_with model: @cinema do |f| %>
-    <div>
-        <%= f.label :title %>
-        <%= f.text_field :title %>
-    </div>
-    
-    <div>
-        <%= f.label :body %>
-        <%= f.text_area :body %>
-    </div>
-<% end %>
+<h1>new_cinemas</h1>
+<%= render 'form' %>

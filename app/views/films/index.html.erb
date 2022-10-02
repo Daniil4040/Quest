@@ -1,6 +1,10 @@
 <h1>Films</h1>
 
 <% @films.each do |film| %>
-    <h2><%= film.title %></h2>
+    <h2><%= film.name %></h2>
+    <h3><%= film.description %></h3>
     <%= film.formatted_created_at %>
+    <%= link_to "edit", edit_film_path(film) %>
+    <%= link_to "show", film_path(film) %>
+    <%= link_to "destroy", film_path(film), data: {method: :delete, confirm: "Вы точно хотите удалить?"} %>
 <% end %>

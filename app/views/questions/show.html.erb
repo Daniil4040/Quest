@@ -1,0 +1,5 @@
+<h2><%= @question.title %></h2>
+<%= @question.formatted_created_at %>
+<h3><%= @question.body %></h3>
+<%= link_to "edit", edit_question_path(@question) %>
+<%= link_to "all", questions_path %>
