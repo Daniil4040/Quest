@@ -1,4 +1,5 @@
 class CinemasController < ApplicationController
+    before_action :set_cinema, only: %i[edit update show destroy] 
     def index
         @cinema = Cinema.all
     end
@@ -8,12 +9,10 @@ class CinemasController < ApplicationController
     end
 
     def edit
-        @cinema = Cinema.find_by(id: params[:id])
     end
 
     def update
         puts params 
-        @cinema = Cinema.find_by(id: params[:id])
         if @cinema.update cinemas_params
             redirect_to cinemas_path
         else
@@ -22,11 +21,9 @@ class CinemasController < ApplicationController
     end
 
     def show
-        @cinema = Cinema.find_by(id: params[:id])
     end
 
     def destroy
-        @cinema = Cinema.find_by(id: params[:id])
         @cinema.destroy
         redirect_to films_path
     end
@@ -41,6 +38,10 @@ class CinemasController < ApplicationController
     end
 
     private
+
+    def set_cinema
+        @cinema = Cinema.find_by(id params[:id])
+    end
 
     def cinema_params
         params.require(:cinema).permit(:name, :year)

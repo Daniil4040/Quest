@@ -10,9 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_20_061803) do
+ActiveRecord::Schema.define(version: 2022_10_02_095154) do
 
-  create_table "cinemas", force: :cascade do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "answers", force: :cascade do |t|
+    t.text "body"
+    t.bigint "question_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["question_id"], name: "index_answers_on_question_id"
+  end
+
+  create_table "cinema", force: :cascade do |t|
     t.string "name"
     t.integer "year"
     t.datetime "created_at", precision: 6, null: false
@@ -33,4 +44,5 @@ ActiveRecord::Schema.define(version: 2022_09_20_061803) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "answers", "questions"
 end

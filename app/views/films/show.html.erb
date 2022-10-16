@@ -1,5 +1,19 @@
-<h2><%= @film.name %></h2>
+<h2 class="mb-4"><%= @film.name %></h2>
+
 <%= @film.formatted_created_at %>
+
 <h3><%= @film.description %></h3>
+
 <%= link_to "edit", edit_film_path(@film) %>
+<%= link_to 'Destroy', film_path(@film), class: 'btn btn-danger', data: { method: :delete, confirm: 'Are you sure' } %>
 <%= link_to "all", films_path %>
+
+<%= form_with model: [@question, @answer] do |f| %>
+    <div class="col-sm-2 col-form-label">
+        <%= f.label :description %>
+    </div>
+    <div class="col-sm-10">
+        <%= f.text_area :description %>
+    </div>
+    <%= f.submit "submit_answer", class:'btn btn-primary' %>
+<% end %>

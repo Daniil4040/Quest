@@ -1,0 +1,26 @@
+<h1 class="mb-4">Cinemas</h1>
+
+<%= link_to 'New cinema', new_cinema_path, class: "btn btn-primary btn-lg mb-3" %>
+
+<% @cinemas.each do |cinema| %>
+  <article class="card mb-3">
+    <div class=card-body>
+      <h2><%= cinema.name %></h2>
+
+      <section class="card-text">
+        <time datatime="<%= cinema.formatted_created_at %>">
+          <small><%= cinema.formatted_created_at %></small>
+        </time>
+
+        <p class="my-2">
+          <%= cinema.year %>
+        </p>
+      </section>
+
+        <%= link_to 'Edit', edit_cinema_path(cinema), class: 'btn btn-secondary' %>
+        <%= link_to 'Destroy', cinema_path(cinema), class: 'btn btn-danger', data: { method: :delete, confirm: 'Are you sure' } %>
+        <%= link_to 'Show', cinema_path(cinema), class: 'btn btn-primary' %>
+
+    </div>
+  </article>
+<% end %>
